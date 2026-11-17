@@ -1,0 +1,6 @@
+{
+  "name": "Swanti & Tihar",
+  "description": "An interactive 3D celebration of Nepal's Tihar festival of lights, featuring procedural brass and clay artifacts, the five days of Yamapanchak, rangoli mandala craft, and Deusi-Bhailo traditions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

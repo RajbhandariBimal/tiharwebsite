@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #0f0b14;
+    color: #f5ede2;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Subtle traditional Nepali Dhaka diamond hairline pattern for structural dividers */
+.dhaka-hairline {
+  height: 6px;
+  background-image: repeating-linear-gradient(
+      135deg,
+      rgba(232, 155, 30, 0.38) 0px,
+      rgba(232, 155, 30, 0.38) 3px,
+      transparent 3px,
+      transparent 9px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(201, 59, 43, 0.35) 0px,
+      rgba(201, 59, 43, 0.35) 3px,
+      transparent 3px,
+      transparent 9px
+    );
+}
+
+.courtyard-ambient {
+  background-image:
+    radial-gradient(ellipse 75% 45% at 50% 0%, rgba(232, 155, 30, 0.09), transparent 70%),
+    radial-gradient(ellipse 55% 35% at 85% 28%, rgba(201, 59, 43, 0.06), transparent 68%);
+}
+
+.midnight-ambient {
+  background-color: #06040a;
+  background-image:
+    radial-gradient(ellipse 70% 42% at 50% 18%, rgba(255, 168, 48, 0.14), transparent 65%),
+    radial-gradient(ellipse 55% 35% at 85% 28%, rgba(88, 122, 235, 0.08), transparent 68%);
+}
+
+@keyframes toran-sway {
+  0%,
+  100% {
+    transform: rotate(-0.8deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(0.8deg) translateY(1.5px);
+  }
+}
+
+@keyframes jhilimili-twinkle {
+  0%,
+  100% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.88);
+  }
+}
+
+.animate-toran-sway {
+  animation: toran-sway 5.5s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.animate-jhilimili {
+  animation: jhilimili-twinkle 2.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
